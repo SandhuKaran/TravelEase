@@ -1,0 +1,23 @@
+/* AnimatedBackground.css */
+.animated-background {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: #000;
+  cursor: pointer;
+}
+
+.scroll-indicator a {
+  text-decoration: none;
+  color: inherit;
+}

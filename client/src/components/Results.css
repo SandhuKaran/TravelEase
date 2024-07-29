@@ -1,0 +1,69 @@
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.results-heading {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+}
+
+.results-heading h1 {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  font-weight: inherit;
+}
+
+.results-background {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+
+.results-content {
+  text-align: center;
+  z-index: 1;
+  margin-top: 10rem;
+}
+
+.results-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  font-weight: inherit;
+}
+
+.results-content p {
+  font-size: 1.5rem;
+}
+
+.results-content ul {
+  list-style-type: none; /* Remove dots */
+  padding: 0; /* Remove default padding */
+  margin: 0;
+}
+
+.results-content li {
+  font-size: 1.5rem; /* Make list items bigger */
+  margin: 10px 0; /* Add space between list items */
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

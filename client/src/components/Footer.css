@@ -1,0 +1,47 @@
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 5px 0;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1000;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.footer-left,
+.footer-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-left h4,
+.footer-right h4 {
+  margin-bottom: 10px;
+  font-weight: inherit;
+}
+
+.social-icons a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.social-icons a:hover {
+  text-decoration: underline;
+}

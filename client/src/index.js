@@ -24,7 +24,7 @@ function App() {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/shortest-path",
+        "https://travel-ease-server.vercel.app/api/shortest-path",
         {
           origin,
           destination,

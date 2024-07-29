@@ -8,6 +8,7 @@ const Results = ({ addresses }) => {
   const [visibleAddresses, setVisibleAddresses] = useState([]);
 
   useEffect(() => {
+    setVisibleAddresses([]); // clears previous addresses
     let delay = 0;
     addresses.forEach((address, index) => {
       setTimeout(() => {

@@ -1,3 +1,6 @@
+// This file is for google maps autocomplete input field. The app was tested with it and without it.
+// Due to being unaesthetic, it is not used in the final version of the project.
+
 import React, { useEffect, useRef } from "react";
 
 function ensureGoogleLoaded() {

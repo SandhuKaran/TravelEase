@@ -7,7 +7,14 @@ const app = express();
 const port = 3000;
 const APIKey = process.env.GOOGLE_MAPS_API_KEY;
 
-app.use(cors());
+// Configure CORS
+const corsOptions = {
+  origin: "https://travel-ease-client.vercel.app", // Allow only the client to make requests.
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"],
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.post("/api/shortest-path", async (req, res) => {

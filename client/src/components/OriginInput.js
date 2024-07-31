@@ -51,7 +51,7 @@ const OriginInput = ({ onSubmit }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       addCar();
-    }, Math.random() * 2000 + 1000); // Random interval between 1 and 3 seconds
+    }, Math.random() * 3000 + 1500); // Random interval between 1.5 and 4.5 seconds
     return () => clearInterval(interval);
   }, []);
 
@@ -195,8 +195,8 @@ const OriginInput = ({ onSubmit }) => {
       {cars.map((car) => (
         <Car key={car.id} position={car.position} direction={car.direction} />
       ))}
-      {/* <img className="origin-image1" src={image1} alt="Description" />
-      <img className="origin-image2" src={image2} alt="Description" /> */}
+      <img className="origin-image1" src={image1} alt="Description" />
+      <img className="origin-image2" src={image2} alt="Description" />
       <div className="scroll-indicator" onClick={handleSubmit}>
         ↓
       </div>

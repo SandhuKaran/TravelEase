@@ -3,6 +3,7 @@ import Car from "./Car";
 import { moveCar } from "../utils/moveCars";
 import "./Results.css";
 import Footer from "./Footer";
+import image from "../images/c.png";
 
 const Results = ({ addresses }) => {
   const [visibleAddresses, setVisibleAddresses] = useState([]);
@@ -50,7 +51,7 @@ const Results = ({ addresses }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       addCar();
-    }, Math.random() * 2000 + 1000);
+    }, Math.random() * 3000 + 1500);
     return () => clearInterval(interval);
   }, []);
 
@@ -82,6 +83,7 @@ const Results = ({ addresses }) => {
       {cars.map((car) => (
         <Car key={car.id} position={car.position} direction={car.direction} />
       ))}
+      <img className="results-image" src={image} alt="Description" />
       <Footer />
     </div>
   );

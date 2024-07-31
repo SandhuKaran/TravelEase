@@ -7,7 +7,7 @@
 .results-heading {
   position: absolute;
   top: 10%;
-  left: 50%;
+  left: 20%;
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 1;
@@ -28,9 +28,12 @@
 }
 
 .results-content {
-  text-align: center;
+  text-align: left;
+  position: absolute;
+  top: 10%;
+  left: 5.7%;
   z-index: 1;
-  margin-top: 10rem;
+  margin-top: 5rem;
 }
 
 .results-content h1 {
@@ -57,6 +60,24 @@
 .fade-in {
   opacity: 0;
   animation: fadeIn 1s forwards;
+}
+
+.results-image {
+  position: absolute;
+  bottom: -2%;
+  right: 0%;
+  width: 500px; /* Adjust size as needed */
+  opacity: 0;
+  transform: translateY(50px); /* Start 100px below its final position */
+  animation: fadeInUp 1s forwards;
+  animation-delay: 2s; /* Adjust delay as needed */
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Move to its final position */
+  }
 }
 
 @keyframes fadeIn {

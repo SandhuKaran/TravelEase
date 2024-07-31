@@ -44,7 +44,7 @@ const AnimatedBackground = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       addCar();
-    }, Math.random() * 2000 + 1000); // Random interval between 1 and 3 seconds
+    }, Math.random() * 3000 + 1500); // Random interval between 1.5 and 4.5 seconds
     return () => clearInterval(interval);
   }, []);
 

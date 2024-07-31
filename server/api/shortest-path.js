@@ -2,6 +2,7 @@ const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
 const app = express();
+const APIKey = process.env.GOOGLE_MAPS_API_KEY;
 
 app.use(cors());
 app.use(express.json());
@@ -18,27 +19,42 @@ app.post("/api/shortest-path", async (req, res) => {
 
   let shortestPath = null;
   let shortestTime = Infinity;
-  let minTimeMatrix = null;
 
   try {
     const or = addresses.slice(0, -1).join("|");
     const de = addresses.slice(1).join("|");
 
-    const url = `https://maps.googleapis.com/maps/api/distancematrix/json?origins=${or}&destinations=${de}&key=${process.env.GOOGLE_MAPS_API_KEY}`;
+    const url = `https://maps.googleapis.com/maps/api/distancematrix/json?origins=${or}&destinations=${de}&key=${APIKey}`;
 
     const response = await axios.get(url);
     const result = response.data;
 
-    minTimeMatrix = result;
+    //console.log("API Response:", JSON.stringify(result, null, 2)); // Debug log the API response
+
+    // Check if the response contains the required data
+    if (!result.rows || result.rows.length === 0) {
+      return res.status(500).json({ error: "Invalid API response" });
+    }
 
     for (const route of permutations) {
       let totalTime = 0;
-      for (let i = 0; i < route.length - 2; i++) {
-        const fromIndex = i;
-        const toIndex = i + 1;
-        totalTime +=
-          minTimeMatrix.rows[fromIndex].elements[toIndex].duration.value;
+
+      for (let i = 0; i < route.length - 1; i++) {
+        const fromIndex = addresses.indexOf(route[i]);
+        const toIndex = addresses.indexOf(route[i + 1]) - 1;
+
+        //console.log(`Calculating time from ${route[i]} to ${route[i + 1]}`); // Debug log each step
+
+        if (
+          result.rows[fromIndex] &&
+          result.rows[fromIndex].elements[toIndex]
+        ) {
+          totalTime += result.rows[fromIndex].elements[toIndex].duration.value;
+          //console.log("Time:", totalTime); // Debug log the time for each step
+        }
       }
+
+      //console.log("Route:", route, "Total Time:", totalTime); // Debug log each route and its total time
 
       if (totalTime < shortestTime) {
         shortestTime = totalTime;

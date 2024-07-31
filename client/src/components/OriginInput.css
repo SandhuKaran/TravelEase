@@ -80,3 +80,32 @@
   opacity: 1;
   transform: translateX(0);
 }
+
+.origin-image1 {
+  position: absolute;
+  bottom: -20%;
+  left: 0%;
+  width: 400px; /* Adjust size as needed */
+  opacity: 0;
+  transform: translateY(50px); /* Start 100px below its final position */
+  animation: fadeInUp 2s forwards;
+  animation-delay: 2.1s; /* Adjust delay as needed */
+}
+
+.origin-image2 {
+  position: absolute;
+  bottom: 8%;
+  right: -5%;
+  width: 300px; /* Adjust size as needed */
+  opacity: 0;
+  transform: translateY(50px); /* Start 100px below its final position */
+  animation: fadeInUp 1s forwards;
+  animation-delay: 2.1s; /* Adjust delay as needed */
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Move to its final position */
+  }
+}

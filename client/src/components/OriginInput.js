@@ -3,6 +3,8 @@ import Car from "./Car";
 import { moveCar } from "../utils/moveCars";
 import "./OriginInput.css";
 import "./WelcomeText.css";
+import image1 from "../images/a.png";
+import image2 from "../images/b.png";
 // import AutocompleteInput from "./AutocompleteInput";
 
 const OriginInput = ({ onSubmit }) => {
@@ -193,6 +195,8 @@ const OriginInput = ({ onSubmit }) => {
       {cars.map((car) => (
         <Car key={car.id} position={car.position} direction={car.direction} />
       ))}
+      {/* <img className="origin-image1" src={image1} alt="Description" />
+      <img className="origin-image2" src={image2} alt="Description" /> */}
       <div className="scroll-indicator" onClick={handleSubmit}>
         ↓
       </div>

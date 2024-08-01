@@ -70,6 +70,7 @@ const Results = ({ addresses }) => {
     <div className="results-background ">
       <div className="results-heading poppins-thin">
         <h1>Shortest Path</h1>
+        <h4>Only client domains can use this app publically</h4>
       </div>
       <div className="results-content">
         <ul>

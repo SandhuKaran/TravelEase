@@ -1,8 +1,16 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .animated-background {
   position: relative;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  overflow: visible;
   background-color: #f0f0f0;
 }
 
@@ -35,7 +43,7 @@
 }
 
 .input-section input {
-  padding: 10px;
+  padding: 8px;
   font-size: 1rem;
   width: 200px;
   border: 2px solid #ccc;
@@ -83,7 +91,7 @@
 
 .origin-image1 {
   position: absolute;
-  bottom: -9%;
+  bottom: -13%;
   left: -8%;
   width: 400px; /* Adjust size as needed */
   opacity: 0;
@@ -94,7 +102,7 @@
 
 .origin-image2 {
   position: absolute;
-  bottom: -13%;
+  bottom: -15%;
   right: -13%;
   width: 450px; /* Adjust size as needed */
   opacity: 0;
